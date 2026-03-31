@@ -2,8 +2,10 @@ package com.seuprojeto.promocoes.service;
 
 import java.util.List;
 import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.seuprojeto.promocoes.model.PriceHistory;
 import com.seuprojeto.promocoes.model.Product;
 import com.seuprojeto.promocoes.repository.PriceHistoryRepository;
@@ -14,8 +16,8 @@ public class PriceHistoryService {
     @Autowired
     private PriceHistoryRepository priceHistoryRepository;
 
-    public List<PriceHistory> findByProductOrderByDataDesc(Product product) {
-        return priceHistoryRepository.findByProductOrderByDataDesc(product);
+    public List<PriceHistory> findByProductOrderByDateDesc(Product product) {
+        return priceHistoryRepository.findByProductOrderByDateDesc(product);
     }
 
     public Optional<PriceHistory> findById(Long Id) {

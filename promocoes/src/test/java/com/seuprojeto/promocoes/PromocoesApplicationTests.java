@@ -1,4 +1,4 @@
-package com.meuprojeto.promocoes;
+package com.seuprojeto.promocoes;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
