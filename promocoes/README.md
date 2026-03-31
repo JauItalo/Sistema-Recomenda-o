@@ -30,6 +30,42 @@ O projeto está organizado da seguinte forma:
 - **pom.xml**: Arquivo de configuração do Maven, com as dependências do projeto.
 - **mvnw / mvnw.cmd**: Scripts para executar o Maven Wrapper.
 
+
+## Funcionalidades já implementadas
+
+### Backend (Spring Boot)
+
+- **Entidades:**
+  - User (usuário)
+  - Product (produto)
+  - Favorite (favorito)
+  - PriceHistory (histórico de preço)
+
+- **Repositórios (JPA):**
+  - UserRepository
+  - ProductRepository
+  - FavoriteRepository
+  - PriceHistoryRepository
+
+- **Services:**
+  - UserService
+  - ProductService
+  - FavoriteService
+  - PriceHistoryService
+
+- **Controllers (API REST):**
+  - UserController: cadastro e busca de usuário
+  - ProductController: CRUD de produtos
+  - FavoriteController: CRUD de favoritos por usuário
+  - PriceHistoryController: histórico de preços por produto
+
+- **Autenticação:**
+  - Dependências para JWT adicionadas (spring-boot-starter-oauth2-resource-server e jjwt)
+  - Classe utilitária JwtUtil criada para geração e validação de tokens JWT
+  - Próximo passo: implementar AuthController para login e emissão de token
+
+---
+
 ## Como Executar
 1. Certifique-se de ter o Java 17+ instalado.
 2. No terminal, navegue até a pasta do projeto e execute:
