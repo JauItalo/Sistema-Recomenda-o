@@ -1,0 +1,17 @@
+.botao-favoritar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: gray;
+    font-size: 24px;
+    transition: color 0.2s;
+    outline: none;;
+}
+
+.botao-favoritar.favorito {
+    color: red;
+}
+
+.botao-favoritar:hover {
+    color: #d32f2f;
+}
