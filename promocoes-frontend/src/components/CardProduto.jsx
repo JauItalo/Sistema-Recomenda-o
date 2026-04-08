@@ -1,6 +1,5 @@
-import React from "react";
+import '../css/CardProduto.css';
 import BotaoFavoritar from "./BotaoFavoritar";
-
 
 const CardProduto = ({ produto, onFavoritar, isFavorito}) => (
     <div className="card-produto">

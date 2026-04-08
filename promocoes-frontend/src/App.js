@@ -1,17 +1,22 @@
-import { useState } from 'react';
-import BotaoFavoritar from './components/BotaoFavoritar';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import Cadastro from './pages/Cadastro';
+import DetalheProduto from './pages/DetalheProduto';
+import Favoritos from './pages/Favoritos';
+import ListaPromocoes from './pages/ListaPromocoes';
+import Login from './pages/Login';
 
 function App() {
-  const [favorito, setFavorito] = useState(false);
-
   return (
-    <div>
-      <h1>Teste Botão Favoritar</h1>
-      <BotaoFavoritar
-        isFavorito={favorito}
-        onClick={() => setFavorito(f => !f)}
-      />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/promocoes" element={<ListaPromocoes />} />
+        <Route path="/favoritos" element={<Favoritos />} />
+        <Route path="/produto/:id" element={<DetalheProduto />} />
+        <Route path="*" element={<Login />} />
+      </Routes>
+    </Router>
   );
 }
 
