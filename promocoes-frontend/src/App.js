@@ -4,9 +4,12 @@ import DetalheProduto from './pages/DetalheProduto';
 import Favoritos from './pages/Favoritos';
 import ListaPromocoes from './pages/ListaPromocoes';
 import Login from './pages/Login';
+
 import PrivateRoute from './components/PrivateRoute';
+import { useAuth } from './hooks/useAuth';
 
 function App() {
+  const auth = useAuth();
   return (
     <Router>
       <Routes>
@@ -16,7 +19,7 @@ function App() {
         <Route
           path="/promocoes"
           element={
-            <PrivateRoute isAuthenticated={path.isAuthenticated}>
+            <PrivateRoute isAuthenticated={auth.isAuthenticated}>
               <ListaPromocoes />
             </PrivateRoute>
           }
@@ -25,13 +28,21 @@ function App() {
         <Route
         path="/favoritos"
         element={
-          <PrivateRoute isAuthenticated={Auth.isAuthenticated}>
+          <PrivateRoute isAuthenticated={auth.isAuthenticated}>
             <Favoritos />
           </PrivateRoute>
           }
         />
+
+        <Route 
+        path="/produto/:id" 
+        element={
+          <PrivateRoute isAuthenticated={auth.isAuthenticated}>
+            <DetalheProduto/>
+          </PrivateRoute>
+        }
+        />
         
-        <Route path="/produto/:id" element={<DetalheProduto />} />
         <Route path="*" element={<Login />} />
       </Routes>
     </Router>
