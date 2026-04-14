@@ -1,8 +1,41 @@
+import { useEffect } from "react";
+import CardProduto from "../components/CardProduto";
 
 const ListaPromocoes = () => {
+
+    const [produtos, setProdutos] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+
+    useEffect(() => {
+        const fetchProdutos = async () => {
+            try {
+                const response = await api.get('/produtos');
+                setProdutos(response.data);
+            } catch (err) {
+                setProdutos([]);
+            } finally {
+                setLoading(false);
+            }
+        };
+        
+        fetchProdutos();
+    }, []);
+
+    if (loading) return <p>Carregando Promoções...</p>
+    if (!produtos.length) return <p>Nenhuma Promoção encontrada.</p>
+
+
     return (
-        <div>
-            <h2>Lista de Promoções</h2>
+        <div style={{display: 'flex', flexWrap: 'wrap'}}>
+            {produtos.map(produto => (
+                <CardProduto
+                    key={produto.id}
+                    produto={produto}
+                    onFavoritar={() => {}}
+                    isFavorito={false}
+                />
+            ))}
         </div>
     );
 };
