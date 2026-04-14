@@ -66,17 +66,74 @@ O projeto está organizado da seguinte forma:
 
 ---
 
-## Como Executar
+
+## Frontend (React)
+O projeto possui um frontend desenvolvido em React, localizado na pasta `promocoes-frontend`.
+
+### Estrutura do Frontend
+- **src/pages/**: Páginas principais do sistema:
+  - `Login.jsx`: Tela de login do usuário.
+  - `Cadastro.jsx`: Tela de cadastro de novo usuário.
+  - `ListaPromocoes.jsx`: Lista de promoções/produtos disponíveis.
+  - `Favoritos.jsx`: Lista de produtos favoritos do usuário.
+  - `DetalheProduto.jsx`: Detalhes de um produto selecionado.
+- **src/components/**: Componentes reutilizáveis (ex: CardProduto, PrivateRoute).
+- **src/services/**: Serviços de integração com a API (ex: `api.js`, `auth.js`).
+- **src/hooks/**: Hooks customizados (ex: `useAuth.js` para autenticação).
+
+### Funcionalidades do Frontend
+- Login e cadastro de usuários (com integração à API backend)
+- Listagem de promoções/produtos
+- Visualização de detalhes do produto
+- Marcação e visualização de favoritos
+- Autenticação JWT (token salvo no localStorage)
+- Rotas protegidas para páginas restritas
+
+### Como Executar o Frontend
+1. Certifique-se de ter o Node.js 18+ instalado.
+2. No terminal, navegue até a pasta `promocoes-frontend` e execute:
+  ```bash
+  npm install
+  npm start
+  ```
+3. Acesse a aplicação em `http://localhost:3000`
+
+---
+
+## Como Executar o Backend
 1. Certifique-se de ter o Java 17+ instalado.
 2. No terminal, navegue até a pasta do projeto e execute:
-   ```bash
-   ./mvnw spring-boot:run
-   ```
-   Ou, no Windows:
-   ```cmd
-   mvnw.cmd spring-boot:run
-   ```
-3. Acesse a aplicação em `http://localhost:8080` (caso haja interface web implementada).
+  ```bash
+  ./mvnw spring-boot:run
+  ```
+  Ou, no Windows:
+  ```cmd
+  mvnw.cmd spring-boot:run
+  ```
+3. O backend estará disponível em `http://localhost:8080`
+
+---
+
+## Integração Backend <-> Frontend
+- O frontend se comunica com o backend via API REST (`http://localhost:8080`).
+- O token JWT é utilizado para autenticação nas rotas protegidas.
+- Para testar a aplicação completa, execute ambos os projetos simultaneamente.
+
+---
+
+## Próximos Passos
+- Implementar tela de histórico de preços no frontend
+- Melhorar layout e responsividade
+- Adicionar testes automatizados (frontend e backend)
+- Implementar notificações de promoções
+
+---
+
+## Contribuição
+Sinta-se à vontade para contribuir com o projeto! Sugestões, correções e melhorias são bem-vindas.
+
+## Licença
+Este projeto está sob a licença MIT.
 
 
 
