@@ -1,8 +1,7 @@
 package com.seuprojeto.promocoes.service;
 
-import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 public class MercadoLibreService {
@@ -12,7 +11,7 @@ public class MercadoLibreService {
 
     public String buscarProdutos(String query) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = UriComponentsBuilder.fromHttpUrl(BASE_URL)
+        String url = UriComponentsBuilder.fromUriString(BASE_URL)
                 .queryParam("q", query)
                 .toUriString();
         
