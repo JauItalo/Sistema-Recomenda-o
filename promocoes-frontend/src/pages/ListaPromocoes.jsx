@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import CardProduto from "../components/CardProduto";
+import BuscaMercadoLivre from "../components/BuscarMercadoLivre";
 
 const ListaPromocoes = () => {
 
@@ -21,6 +22,10 @@ const ListaPromocoes = () => {
         
         fetchProdutos();
     }, []);
+
+
+
+    <BuscaMercadoLivre/>
 
     if (loading) return <p>Carregando Promoções...</p>
     if (!produtos.length) return <p>Nenhuma Promoção encontrada.</p>
