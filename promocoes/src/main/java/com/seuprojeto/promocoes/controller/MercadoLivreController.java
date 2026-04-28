@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.seuprojeto.promocoes.service.MercadoLibreService;
+import com.seuprojeto.promocoes.service.MercadoLivreService;
 
 
 
@@ -18,12 +18,12 @@ public class MercadoLivreController {
 
 
     @Autowired
-    private MercadoLibreService mercadoLibreService;
+    private MercadoLivreService mercadoLivreService;
 
 
     @GetMapping("/search")
     public ResponseEntity<String> search(@RequestParam String q) {
-        String resultado = mercadoLibreService.buscarProdutos(q);
+        String resultado = mercadoLivreService.buscarProdutos(q);
         return ResponseEntity.ok(resultado);
     }
 

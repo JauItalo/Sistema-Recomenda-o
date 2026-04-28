@@ -1,10 +1,13 @@
 package com.seuprojeto.promocoes.service;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-public class MercadoLibreService {
+
+@Service
+public class MercadoLivreService {
 
     private final String BASE_URL = "https://api.mercadolibre.com/sites/MLB/search";
 
